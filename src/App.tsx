@@ -1,5 +1,5 @@
-/* eslint-disable react/prefer-stateless-function */
 import React from "react";
+import Button from "./components/Button";
 
 class App extends React.Component<{}, { fillingForm: boolean }> {
   constructor(props: any) {
@@ -14,7 +14,31 @@ class App extends React.Component<{}, { fillingForm: boolean }> {
     const { fillingForm } = this.state;
 
     return (
-      <div>{fillingForm ? <h1>Still on form</h1> : <h1>CV ready</h1>}</div>
+      <div>
+        {fillingForm ? (
+          <form>
+            <Button
+              handleClick={() =>
+                this.setState((prevState) => ({
+                  fillingForm: !prevState.fillingForm,
+                }))
+              }
+              text="CREATE CV"
+              isSubmit={false}
+            />
+          </form>
+        ) : (
+          <Button
+            handleClick={() =>
+              this.setState((prevState) => ({
+                fillingForm: !prevState.fillingForm,
+              }))
+            }
+            text="BACK TO FORM"
+            isSubmit={false}
+          />
+        )}
+      </div>
     );
   }
 }
