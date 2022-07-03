@@ -8,7 +8,7 @@ interface AppState {
 
 interface AppProps {}
 
-class App extends React.Component<{}, AppState> {
+class App extends React.Component<AppProps, AppState> {
   constructor(props: AppProps) {
     super(props);
 
