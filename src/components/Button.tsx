@@ -3,7 +3,7 @@ import React from "react";
 interface ButtonProps {
   isSubmit: boolean;
   text: string;
-  handleClick: () => void;
+  handleClick?: () => void;
 }
 
 function Button({ isSubmit, text, handleClick }: ButtonProps) {
@@ -13,5 +13,9 @@ function Button({ isSubmit, text, handleClick }: ButtonProps) {
     </button>
   );
 }
+
+Button.defaultProps = {
+  handleClick: undefined,
+};
 
 export default Button;

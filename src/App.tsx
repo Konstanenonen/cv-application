@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "./components/Button";
+import Form from "./components/Form";
 
 class App extends React.Component<{}, { fillingForm: boolean }> {
   constructor(props: any) {
@@ -8,6 +9,14 @@ class App extends React.Component<{}, { fillingForm: boolean }> {
     this.state = {
       fillingForm: true,
     };
+
+    this.toggleFormStatus = this.toggleFormStatus.bind(this);
+  }
+
+  toggleFormStatus() {
+    this.setState((prevState) => ({
+      fillingForm: !prevState.fillingForm,
+    }));
   }
 
   render() {
@@ -16,17 +25,7 @@ class App extends React.Component<{}, { fillingForm: boolean }> {
     return (
       <div>
         {fillingForm ? (
-          <form>
-            <Button
-              handleClick={() =>
-                this.setState((prevState) => ({
-                  fillingForm: !prevState.fillingForm,
-                }))
-              }
-              text="CREATE CV"
-              isSubmit={false}
-            />
-          </form>
+          <Form toggleFormStatus={this.toggleFormStatus} />
         ) : (
           <Button
             handleClick={() =>
