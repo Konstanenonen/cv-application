@@ -2,8 +2,14 @@ import React from "react";
 import Button from "./components/Button";
 import Form from "./components/Form";
 
-class App extends React.Component<{}, { fillingForm: boolean }> {
-  constructor(props: any) {
+interface AppState {
+  fillingForm: boolean;
+}
+
+interface AppProps {}
+
+class App extends React.Component<{}, AppState> {
+  constructor(props: AppProps) {
     super(props);
 
     this.state = {
