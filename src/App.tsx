@@ -1,9 +1,20 @@
 import React from "react";
 import Button from "./components/Button";
-import Form from "./components/Form";
+import { UserInformation } from "./interfaces";
 
 interface AppState {
   fillingForm: boolean;
+  userInformation: UserInformation;
+  education: {
+    school: string;
+    titleOfStudy: string;
+    dateOfStudy: string;
+  };
+  work: {
+    company: string;
+    title: string;
+    tasks: string;
+  };
 }
 
 interface AppProps {}
@@ -14,6 +25,21 @@ class App extends React.Component<AppProps, AppState> {
 
     this.state = {
       fillingForm: true,
+      userInformation: {
+        name: "",
+        email: "",
+        phoneNumber: "",
+      },
+      education: {
+        school: "",
+        titleOfStudy: "",
+        dateOfStudy: "",
+      },
+      work: {
+        company: "",
+        title: "",
+        tasks: "",
+      },
     };
 
     this.toggleFormStatus = this.toggleFormStatus.bind(this);
@@ -26,22 +52,35 @@ class App extends React.Component<AppProps, AppState> {
   }
 
   render() {
-    const { fillingForm } = this.state;
+    const { fillingForm, userInformation, education, work } = this.state;
 
     return (
       <div>
         {fillingForm ? (
-          <Form toggleFormStatus={this.toggleFormStatus} />
-        ) : (
           <Button
             handleClick={() =>
               this.setState((prevState) => ({
                 fillingForm: !prevState.fillingForm,
               }))
             }
-            text="BACK TO FORM"
+            text="GO TO CV"
             isSubmit={false}
           />
+        ) : (
+          <div>
+            <Button
+              handleClick={() =>
+                this.setState((prevState) => ({
+                  fillingForm: !prevState.fillingForm,
+                }))
+              }
+              text="BACK TO FORM"
+              isSubmit={false}
+            />
+            <p>{userInformation.name}</p>
+            <p>{education.school}</p>
+            <p>{work.company}</p>
+          </div>
         )}
       </div>
     );
