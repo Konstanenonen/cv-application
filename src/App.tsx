@@ -74,7 +74,69 @@ class App extends React.Component<AppProps, AppState> {
               label="Name"
               input="name"
             />
-            <Button text="GENERATE CV" isSubmit />
+            <Section
+              handleChange={(e: any) =>
+                this.setState({ email: e.target.value })
+              }
+              value={email}
+              label="Email"
+              input="email"
+            />
+            <Section
+              handleChange={(e: any) =>
+                this.setState({ phoneNumber: e.target.value })
+              }
+              value={phoneNumber}
+              label="Phone number"
+              input="phoneNumber"
+            />
+            <Section
+              handleChange={(e: any) =>
+                this.setState({ school: e.target.value })
+              }
+              value={school}
+              label="School"
+              input="school"
+            />
+            <Section
+              handleChange={(e: any) =>
+                this.setState({ titleOfStudy: e.target.value })
+              }
+              value={titleOfStudy}
+              label="Title of Study"
+              input="titleOfStudy"
+            />
+            <Section
+              handleChange={(e: any) =>
+                this.setState({ dateOfStudy: e.target.value })
+              }
+              value={dateOfStudy}
+              label="Date of Study"
+              input="dateOfStudy"
+            />
+            <Section
+              handleChange={(e: any) => this.setState({ work: e.target.value })}
+              value={work}
+              label="Company name"
+              input="work"
+            />
+            <Section
+              handleChange={(e: any) =>
+                this.setState({ title: e.target.value })
+              }
+              value={title}
+              label="Work title"
+              input="title"
+            />
+            <Section
+              handleChange={(e: any) =>
+                this.setState({ tasks: e.target.value })
+              }
+              value={tasks}
+              label="Work tasks"
+              input="tasks"
+            />
+            <Button text="GENERATE" isSubmit />
           </form>
         ) : (
           <div>
@@ -93,7 +155,7 @@ class App extends React.Component<AppProps, AppState> {
                   fillingForm: !prevState.fillingForm,
                 }))
               }
-              text="BACK TO FORM"
+              text="EDIT"
               isSubmit={false}
             />
           </div>
