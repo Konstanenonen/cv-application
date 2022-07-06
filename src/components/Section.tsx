@@ -1,11 +1,28 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prefer-stateless-function */
 import React from "react";
 
-class Section extends React.Component {
+interface SectionProps {
+  label: string;
+  input: string;
+  value: string;
+  handleChange: (e: any) => void;
+}
+
+class Section extends React.Component<SectionProps> {
   render() {
+    const { label, input, value, handleChange } = this.props;
+
     return (
       <div>
-        <p>Jiit</p>
+        <label htmlFor={input}>{label}</label>
+        <input
+          onChange={handleChange}
+          value={value}
+          type="text"
+          id={input}
+          name={input}
+        />
       </div>
     );
   }
