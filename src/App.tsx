@@ -2,6 +2,7 @@
 import React from "react";
 import Button from "./components/Button";
 import Section from "./components/Section";
+import Cv from "./components/Cv";
 
 interface AppState {
   fillingForm: boolean;
@@ -150,16 +151,19 @@ class App extends React.Component<AppProps, AppState> {
             <Button text="GENERATE" isSubmit />
           </form>
         ) : (
-          <div>
-            <p>{name}</p>
-            <p>{email}</p>
-            <p>{phoneNumber}</p>
-            <p>{school}</p>
-            <p>{titleOfStudy}</p>
-            <p>{dateOfStudy}</p>
-            <p>{work}</p>
-            <p>{title}</p>
-            <p>{tasks}</p>
+          <>
+            <Cv
+              name={name}
+              email={email}
+              phoneNumber={phoneNumber}
+              school={school}
+              titleOfStudy={titleOfStudy}
+              dateOfStudy={dateOfStudy}
+              work={work}
+              title={title}
+              tasks={tasks}
+              workDuration={workDuration}
+            />
             <Button
               handleClick={() =>
                 this.setState((prevState) => ({
@@ -169,7 +173,7 @@ class App extends React.Component<AppProps, AppState> {
               text="EDIT"
               isSubmit={false}
             />
-          </div>
+          </>
         )}
       </div>
     );
