@@ -14,6 +14,7 @@ interface AppState {
   work: string;
   title: string;
   tasks: string;
+  workDuration: string;
 }
 
 interface AppProps {}
@@ -33,6 +34,7 @@ class App extends React.Component<AppProps, AppState> {
       work: "",
       title: "",
       tasks: "",
+      workDuration: "",
     };
 
     this.toggleFormStatus = this.toggleFormStatus.bind(this);
@@ -62,6 +64,7 @@ class App extends React.Component<AppProps, AppState> {
       work,
       title,
       tasks,
+      workDuration,
     } = this.state;
 
     return (
@@ -135,6 +138,14 @@ class App extends React.Component<AppProps, AppState> {
               value={tasks}
               label="Work tasks"
               input="tasks"
+            />
+            <Section
+              handleChange={(e: any) =>
+                this.setState({ workDuration: e.target.value })
+              }
+              value={workDuration}
+              label="Work duration"
+              input="workDuration"
             />
             <Button text="GENERATE" isSubmit />
           </form>
