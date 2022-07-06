@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "./components/Button";
 import { UserInformation } from "./interfaces";
+import Section from "./components/Section";
 
 interface AppState {
   fillingForm: boolean;
@@ -43,6 +44,12 @@ class App extends React.Component<AppProps, AppState> {
     };
 
     this.toggleFormStatus = this.toggleFormStatus.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit(e: any) {
+    e.preventDefault();
+    this.toggleFormStatus();
   }
 
   toggleFormStatus() {
@@ -57,15 +64,10 @@ class App extends React.Component<AppProps, AppState> {
     return (
       <div>
         {fillingForm ? (
-          <Button
-            handleClick={() =>
-              this.setState((prevState) => ({
-                fillingForm: !prevState.fillingForm,
-              }))
-            }
-            text="GO TO CV"
-            isSubmit={false}
-          />
+          <form onSubmit={this.handleSubmit}>
+            <Section />
+            <Button text="GENERATE CV" isSubmit />
+          </form>
         ) : (
           <div>
             <Button
