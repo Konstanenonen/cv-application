@@ -31,16 +31,16 @@ class Cv extends React.Component<CvProps> {
 
     return (
       <div>
-        <p>{name}</p>
-        <p>{email}</p>
-        <p>{phoneNumber}</p>
-        <p>{school}</p>
-        <p>{titleOfStudy}</p>
-        <p>{dateOfStudy}</p>
-        <p>{work}</p>
-        <p>{title}</p>
-        <p>{tasks}</p>
-        <p>{workDuration}</p>
+        <p>Name: {name}</p>
+        <p>Email: {email}</p>
+        <p>Phone number: {phoneNumber}</p>
+        <p>School name: {school}</p>
+        <p>Degree title: {titleOfStudy}</p>
+        <p>Duration of study: {dateOfStudy}</p>
+        <p>Company name: {work}</p>
+        <p>Work title: {title}</p>
+        <p>Main tasks: {tasks}</p>
+        <p>Duration of work: {workDuration}</p>
       </div>
     );
   }
