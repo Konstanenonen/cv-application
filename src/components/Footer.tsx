@@ -1,11 +1,12 @@
 /* eslint-disable react/prefer-stateless-function */
 import React from "react";
+import "../styles/Footer.css";
 
 class Footer extends React.Component {
   render() {
     return (
-      <footer>
-        <p>Made by Konsta Nenonen</p>
+      <footer className="footer">
+        <p className="footer-text">Made by Konsta Nenonen</p>
       </footer>
     );
   }
