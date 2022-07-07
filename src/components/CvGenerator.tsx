@@ -156,11 +156,7 @@ class CvGenerator extends React.Component<CvGeneratorProps, CvGeneratorState> {
               workDuration={workDuration}
             />
             <Button
-              handleClick={() =>
-                this.setState((prevState) => ({
-                  fillingForm: !prevState.fillingForm,
-                }))
-              }
+              handleClick={this.toggleFormStatus}
               text="EDIT"
               isSubmit={false}
             />
