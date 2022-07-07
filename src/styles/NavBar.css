@@ -1,0 +1,13 @@
+.nav-bar {
+  height: 75px;
+  border-bottom: 2px solid black;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.611);
+  display: flex;
+  align-items: center;
+  padding: 15px;
+}
+
+.nav-title {
+  font-size: 2rem;
+  font-weight: bold;
+}
