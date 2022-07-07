@@ -6,7 +6,7 @@ interface SectionProps {
   label: string;
   input: string;
   value: string;
-  handleChange: (e: any) => void;
+  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 class Section extends React.Component<SectionProps> {

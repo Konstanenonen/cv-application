@@ -38,12 +38,6 @@ class CvGenerator extends React.Component<CvGeneratorProps, CvGeneratorState> {
     };
 
     this.toggleFormStatus = this.toggleFormStatus.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleSubmit(e: any) {
-    e.preventDefault();
-    this.toggleFormStatus();
   }
 
   toggleFormStatus() {
@@ -70,23 +64,26 @@ class CvGenerator extends React.Component<CvGeneratorProps, CvGeneratorState> {
     return (
       <div>
         {fillingForm ? (
-          <form onSubmit={this.handleSubmit}>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              this.toggleFormStatus();
+            }}
+          >
             <Section
-              handleChange={(e: any) => this.setState({ name: e.target.value })}
+              handleChange={(e) => this.setState({ name: e.target.value })}
               value={name}
               label="Name"
               input="name"
             />
             <Section
-              handleChange={(e: any) =>
-                this.setState({ email: e.target.value })
-              }
+              handleChange={(e) => this.setState({ email: e.target.value })}
               value={email}
               label="Email"
               input="email"
             />
             <Section
-              handleChange={(e: any) =>
+              handleChange={(e) =>
                 this.setState({ phoneNumber: e.target.value })
               }
               value={phoneNumber}
@@ -94,15 +91,13 @@ class CvGenerator extends React.Component<CvGeneratorProps, CvGeneratorState> {
               input="phoneNumber"
             />
             <Section
-              handleChange={(e: any) =>
-                this.setState({ school: e.target.value })
-              }
+              handleChange={(e) => this.setState({ school: e.target.value })}
               value={school}
               label="School"
               input="school"
             />
             <Section
-              handleChange={(e: any) =>
+              handleChange={(e) =>
                 this.setState({ titleOfStudy: e.target.value })
               }
               value={titleOfStudy}
@@ -110,7 +105,7 @@ class CvGenerator extends React.Component<CvGeneratorProps, CvGeneratorState> {
               input="titleOfStudy"
             />
             <Section
-              handleChange={(e: any) =>
+              handleChange={(e) =>
                 this.setState({ dateOfStudy: e.target.value })
               }
               value={dateOfStudy}
@@ -118,29 +113,25 @@ class CvGenerator extends React.Component<CvGeneratorProps, CvGeneratorState> {
               input="dateOfStudy"
             />
             <Section
-              handleChange={(e: any) => this.setState({ work: e.target.value })}
+              handleChange={(e) => this.setState({ work: e.target.value })}
               value={work}
               label="Company name"
               input="work"
             />
             <Section
-              handleChange={(e: any) =>
-                this.setState({ title: e.target.value })
-              }
+              handleChange={(e) => this.setState({ title: e.target.value })}
               value={title}
               label="Work title"
               input="title"
             />
             <Section
-              handleChange={(e: any) =>
-                this.setState({ tasks: e.target.value })
-              }
+              handleChange={(e) => this.setState({ tasks: e.target.value })}
               value={tasks}
               label="Work tasks"
               input="tasks"
             />
             <Section
-              handleChange={(e: any) =>
+              handleChange={(e) =>
                 this.setState({ workDuration: e.target.value })
               }
               value={workDuration}
