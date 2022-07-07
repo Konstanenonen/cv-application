@@ -81,6 +81,7 @@ class CvGenerator extends React.Component<CvGeneratorProps, CvGeneratorState> {
               value={email}
               label="Email"
               input="email"
+              type="email"
             />
             <Section
               handleChange={(e) =>
