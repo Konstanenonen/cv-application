@@ -2,6 +2,7 @@ import React from "react";
 import Button from "./Button";
 import Section from "./Section";
 import Cv from "./Cv";
+import "../styles/CvGenerator.css";
 
 interface CvGeneratorState {
   fillingForm: boolean;
@@ -62,7 +63,7 @@ class CvGenerator extends React.Component<CvGeneratorProps, CvGeneratorState> {
     } = this.state;
 
     return (
-      <div>
+      <div className="cv-generator">
         {fillingForm ? (
           <form
             onSubmit={(e) => {

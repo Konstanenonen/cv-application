@@ -1,0 +1,7 @@
+.cv-generator {
+  display: flex;
+  justify-content: center;
+  border: 1px solid black;
+  padding: 30px;
+  width: 250px;
+}
