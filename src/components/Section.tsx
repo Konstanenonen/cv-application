@@ -2,6 +2,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prefer-stateless-function */
 import React from "react";
+import "../styles/Section.css";
 
 interface SectionProps {
   label: string;
@@ -20,7 +21,7 @@ class Section extends React.Component<SectionProps> {
     const { label, input, value, type, handleChange } = this.props;
 
     return (
-      <div>
+      <div className="section">
         <label htmlFor={input}>{label}</label>
         <input
           onChange={handleChange}

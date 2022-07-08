@@ -1,5 +1,6 @@
 /* eslint-disable react/prefer-stateless-function */
 import React from "react";
+import "../styles/Cv.css";
 
 interface CvProps {
   name: string;
@@ -30,7 +31,7 @@ class Cv extends React.Component<CvProps> {
     } = this.props;
 
     return (
-      <div>
+      <div className="cv">
         <p>Name: {name}</p>
         <p>Email: {email}</p>
         <p>Phone number: {phoneNumber}</p>
