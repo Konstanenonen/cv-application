@@ -1,6 +1,7 @@
 /* eslint-disable react/static-property-placement */
 /* eslint-disable react/prefer-stateless-function */
 import React from "react";
+import "../styles/Group.css";
 
 interface GroupProps {
   children?: React.ReactNode;
@@ -16,7 +17,7 @@ class Group extends React.Component<GroupProps> {
     const { children, name } = this.props;
     return (
       <div className="group">
-        <h3>{name}</h3>
+        <h3 className="group-name">{name}</h3>
         {children}
       </div>
     );

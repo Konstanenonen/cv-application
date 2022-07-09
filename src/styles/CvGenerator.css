@@ -1,6 +1,7 @@
 .cv-generator {
   display: flex;
   flex-direction: column;
+  gap: 40px;
   border: 1px solid black;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.611);
   padding: 30px;
