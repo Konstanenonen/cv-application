@@ -1,6 +1,4 @@
-/* eslint-disable react/static-property-placement */
 /* eslint-disable no-unused-vars */
-/* eslint-disable react/prefer-stateless-function */
 import React from "react";
 import "../styles/Section.css";
 
