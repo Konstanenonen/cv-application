@@ -12,27 +12,23 @@ interface SectionProps {
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-class Section extends React.Component<SectionProps> {
-  static defaultProps = {
-    type: "text",
-  };
-
-  render() {
-    const { label, input, value, type, handleChange } = this.props;
-
-    return (
-      <div className="section">
-        <label htmlFor={input}>{label}</label>
-        <input
-          onChange={handleChange}
-          value={value}
-          type={type}
-          id={input}
-          name={input}
-        />
-      </div>
-    );
-  }
+function Section({ label, input, value, type, handleChange }: SectionProps) {
+  return (
+    <div className="section">
+      <label htmlFor={input}>{label}</label>
+      <input
+        onChange={handleChange}
+        value={value}
+        type={type}
+        id={input}
+        name={input}
+      />
+    </div>
+  );
 }
+
+Section.defaultProps = {
+  type: "text",
+};
 
 export default Section;
